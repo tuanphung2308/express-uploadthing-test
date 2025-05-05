@@ -2,15 +2,27 @@
   "name": "express-hello-world",
   "version": "1.0.0",
   "description": "Express Hello World on Render",
-  "main": "app.js",
+  "main": "dist/app.js",
   "repository": "https://github.com/render-examples/express-hello-world",
   "author": "Render Developers",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node app.js"
+    "build": "tsc",
+    "dev": "tsx app.ts",
+    "start": "node dist/app.js"
   },
   "dependencies": {
-    "express": "^5.0.0"
+    "@web-std/file": "^3.0.3",
+    "dotenv": "^16.5.0",
+    "express": "^5.0.0",
+    "uploadthing": "^7.6.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.3",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
   }
 }
