@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config(); // Load environment variables from .env file
 
+import cors from 'cors'; // Import cors
 import express from 'express';
 
 const app = express();
@@ -13,8 +14,8 @@ import { uploadRouter } from './uploadthing';
 
 const utapi = new UTApi();
 
-// Add express.json() middleware
-app.use(express.json({ limit: '10mb' })); // Increased limit for base64 data
+app.use(cors()); // Use cors middleware
+app.use(express.json({ limit: '10mb' })); // Add JSON middleware for parsing request body, increase limit slightly for base64
 
 app.use(
   '/api/uploadthing',
